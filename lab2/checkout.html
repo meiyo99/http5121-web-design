@@ -14,21 +14,47 @@
             <ul>
               <li><a href="#">Account</a></li>
               <li><a href="#">Cart</a></li>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Shop</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
             </ul>
           </nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
     </header>
     <main id="main">
         <h1>Checkout Order #1234 - Billing and Payment</h1>
         <p>Order total: $129.57</p>
         <fieldset>
             <legend>Billing Information</legend>
-                <label for="first-name">First Name:</label>
-                <input type="text" id="first-name" name="first-name" placeholder="John">
-              
+                <div>
+                    <label for="first-name">First Name:</label>
+                    <input type="text" id="first-name" name="first-name" placeholder="John">
+                    <label for="last-name">Last Name:</label>
+                    <input type="text" id="first-name" name="last-name" placeholder="Doe">
+                </div>
+                <div>
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" placeholder="123 Fake Street">
+                </div>
+                <div>
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" placeholder="Toronto">
+                    <label for="province">Province:</label>
+                    <select id="province" name="province">
+                        <option disabled selected>-- Choose Province --</option>
+                        <option value="NB">New Brunswick</option>
+                        <option value="ON">Ontario</option>
+                        <option value="QC">Quebec</option>
+                    </select>
+                    <label for="postal-code">Postal code:</label>
+                    <input type="text" id="postal-code" name="postal-code" placeholder="A1A 1A1">
+                </div>
+                <div>
+                    <label for="phone">Phone number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="555-555-5555">
+                </div>
           </fieldset>
         <footer>
         </footer>
