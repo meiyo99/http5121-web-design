@@ -28,41 +28,91 @@
       can omit this attribute for this class, but it's important to know about this attribute.
     -->
     <h2>Search form example</h2>
-
     <form method="get">
-      <label>Search:</label><!-- the visible name of the field -->
-      <input type="text" id="search" name="q" placeholder="e.g. arctic fox"> <!-- the text field-->
+      <label for="search">Search:</label><!-- the visible name of the field -->
+      <input type="text" id="search" name="q" placeholder="e.g. arctic fox"><!-- the text field -->
       <button type="submit">Search now</button>
     </form>
-  
 
     <h2>Login form example</h2>
-    <form>
+    <form method="post">
       <div>
         <label for="u">Username:</label>
-        <input type="text" id="u" name="user" placeholder="johndoe"> <!-- input is a self closing tag -->
-        <label for="pw" >Password</label>
-        <input type="text" id="pw" name="pass" placeholder="********">
-        <button type="submit">Log in</button>
-    </div>
+        <input type="text" id="u" name="user" placeholder="johndoe"><!-- input is a self-closing tag -->
+      </div>
+      <div>
+        <label for="pw">Password:</label>
+        <input type="password" id="pw" name="pass" placeholder="******">
+      </div>
+      <button type="submit">Log in</button>
     </form>
-    
 
     <h2>Random form example</h2>
     <p>The following is just a form used to test out a few form fields.</p>
     <form method="post">
-        <div>
-            <label for="household">Number of people in your household:</label>
-            <input type="number" id="household" name="household" min="1" value="1">
-        </div>
-        <div>
-            <label for="phone">Your phone number:</label>
-            <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555">
-        </div>
-        <div>
-            <label for="email">Your email ID:</label>
-            <input type="email" id="email" name="email" placeholder="john.doe@example.com">
-        </div>
+      <div>
+        <label for="household">Number of people in your household:</label>
+        <input type="number" id="household" name="household" min="1" value="1">
+      </div>
+      <div>
+        <label for="phone">Your phone number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555">
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="john.doe@example.com"><!-- placeholder text is for examples of valid data. It disappears when you type in the field. -->
+      </div>
+      <div>
+        <label for="random">Random number:</label>
+        <input type="text" inputmode="numeric" id="random" name="random" placeholder="1">
+      </div>
+      <input type="hidden" name="my-hidden-field" value="Random value">
+      <div>
+        <input type="checkbox" id="subscribe" name="subscribe" value="subscribed">
+        <label for="subscribe">Subscribe to our newsletter</label>
+      </div>
+      <!-- A fieldset is a grouping of related fields. It should have a legend element inside it which names what the fieldset is for. -->
+      <fieldset>
+        <legend>Select your age group</legend>
+        <input type="radio" id="twenties" name="age" value="20s" checked><!-- To select a radio button OR checkbox by default, use the checked attribute. -->
+        <label for="twenties">20-29</label>
+        <input type="radio" id="thirties" name="age" value="30s">
+        <label for="thirties">30-39</label>
+        <input type="radio" id="forties" name="age" value="40s">
+        <label for="forties">40-49</label>
+        <input type="radio" id="older" name="age" value="50+">
+        <label for="older">50+</label>
+      </fieldset>
+      <fieldset>
+        <legend>Select your interests</legend>
+        <input type="checkbox" id="art" name="interests" value="art">
+        <label for="art">Art</label>
+        <input type="checkbox" id="wood" name="interests" value="woodworking">
+        <label for="wood">Woodworking</label>
+        <input type="checkbox" id="cooking" name="interests" value="cooking">
+        <label for="cooking">Cooking</label>
+      </fieldset>
+      <div>
+        <label for="reason">Reason for your enquiry:</label>
+        <select id="reason" name="reason">
+          <option disabled selected>--Choose a reason--</option>
+          <option value="sales">Sales enquiries</option>
+          <option value="legal">Legal enquiries</option>
+          <optgroup label="Other enquiries">
+            <option value="media">Media enquiries</option>
+            <option value="general">General enquiries</option>
+          </optgroup>
+        </select>
+      </div>
+      <div>
+        <label for="message">Your message:</label>
+      </div>
+      <div>
+        <textarea id="message" name="msg" placeholder="Your message text here..." rows="10" cols="70"></textarea>
+      </div>
+      <button type="submit">Submit</button>
+      <button type="reset">Clear form</button>
+      <button type="button">Do something</button>
     </form>
   </body>
 </html>
