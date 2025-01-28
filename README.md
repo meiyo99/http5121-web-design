@@ -1,4 +1,4 @@
-# HTTP5114 Web Design
+# HTTP5121 Web Design
 
 This is the repo for class content from [HTTP5121 Web Design](https://mediaarts.humber.ca/programs/web-development.html)
 
