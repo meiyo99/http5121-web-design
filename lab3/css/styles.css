@@ -2,10 +2,67 @@ body {
     font-family: sans-serif;
 }
 
-h1, h2 {
-    font-family: sans-serif;
+#main {
+    font-style: normal;
 }
 
-a {
-    
+h1, h2 {
+    font-family: sans-serif;
+    font-style: italic;
+    border:2px solid blue;
+    border-radius: 7px;
+    padding-left: 0.5em;
+}
+
+h1 {
+    color: blue;
+    background-color: beige;
+}
+
+#main h2 {
+    color: white;
+    background-color: rgb(22, 114, 180);
+}
+
+.link {
+    background-color: blue;
+    color: white;
+}
+
+a:link {
+    color:red;
+}
+
+a:hover {
+    color: blue;
+}
+
+a:visited {
+    color: black;
+}
+
+#footer {
+    background-color: beige;
+}
+
+#footer h2 {
+    color: blue;
+}
+
+#email {
+    padding:0.8em 1em;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+
+button {
+    background-color:#6b0909;
+    color:#dedbd5;
+    text-decoration:none;
+    padding:0.8em 1em;
+    border-radius:1em;
+}
+
+button:hover {
+    background-color:blue;
 }
