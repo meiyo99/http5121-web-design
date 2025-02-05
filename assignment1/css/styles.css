@@ -1,0 +1,157 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #d8ffd9;
+    color: #333;
+  }
+  
+  header {
+    background-color: #2e522f;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  header h1 a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav ul li {
+    margin: 0 1rem;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Main Content */
+  main {
+    display: flex;
+    padding: 1rem;
+  }
+  
+  article {
+    flex: 3;
+    margin-right: 2rem;
+  }
+  
+  article img {
+    max-width: 100%;
+    height: auto;
+    margin: 1rem 0;
+  }
+  
+  aside {
+    flex: 1;
+    background-color: #e0e0e0;
+    padding: 1rem;
+    border-radius: 5px;
+  }
+  
+  aside h3 {
+    margin-top: 0;
+  }
+  
+  aside ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  aside ul li {
+    margin: 0.5rem 0;
+  }
+  
+  aside ul li a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  aside form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  aside input {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  aside button {
+    padding: 0.5rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Comment Form */
+  .comment-form {
+    padding: 1rem;
+    background-color: white;
+    margin: 1rem;
+    border-radius: 5px;
+  }
+  
+  .comment-form h3 {
+    margin-top: 0;
+  }
+  
+  .comment-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .comment-form label {
+    margin-bottom: 0.5rem;
+  }
+  
+  .comment-form input,
+  .comment-form textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .comment-form button {
+    padding: 0.5rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+  }
+  
+  footer a {
+    color: #4CAF50;
+    text-decoration: none;
+  }
