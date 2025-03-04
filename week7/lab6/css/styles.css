@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --accent:#AD00FF;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    font: 300 1em 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+}
+
+h1 {
+    font-weight: 700;
+}
+
+.content-wrapper {
+    padding: 1em 1.31em;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#header a:link, #header a:visited {
+    text-decoration: none;
+    color: #000;
+}
+
+#site-logo {
+    margin: 0;;
+}
+
+#site-logo a {
+    font-size: 2em;
+    font-weight: 400;
+    text-shadow: 0 4px 4px #0000007e;
+}
+
+#nav-menu {
+    display: flex;
+    column-gap: 3.25em;
+    list-style: none;
+    font-size: 1.5em;
+    font-weight: 400;
+    margin: 0;
+}
+
+#nav-menu a:hover {
+    color: var(--accent);
+}
+
+#main {
+    text-align: center;
+}
+.hero-text {
+    background-image: url("/assets/macarons.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 90px 280px 230px 280px;
+}
+
+.hero-text h1 {
+    font-size: 4em;
+    color: #fff;
+    text-shadow: 0 4px 4px #0000007e;
+    /* padding: 90px 280px 230px 280px; */
+}
+
+#main a{
+    align-items: center;
+    font-size: 1.25em;
+    font-weight: 500;
+    text-decoration: none;
+    background-color: #fff;
+    color: var(--accent);
+    padding: 16px 62px;
+    border: 6px solid var(--accent);
+    border-radius: 36px;
+    margin-bottom: 200px;
+}
+
+#main a:hover {
+    background-color: var(--accent);
+    color: #fff;
+}
