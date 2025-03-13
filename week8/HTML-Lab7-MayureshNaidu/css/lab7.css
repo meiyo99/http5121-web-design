@@ -43,6 +43,11 @@ a:hover {
   padding:4em 1em;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* 2. LAYOUT */
 #header, #main, #footer {
   border:1px solid #000;
@@ -140,3 +145,26 @@ a:hover {
 }
 
 /* 5. MEDIA QUERIES */
+@media screen and (max-width: 768px) {
+  .articles-container .article:nth-child(3) {
+    flex: 100%;
+  }
+
+  .gallery-container .item {
+    flex-basis: 50%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #main-menu ul {
+    flex-direction: column;
+  }
+
+  .articles-container .article {
+    flex: 100%;
+  }
+
+  .gallery-container .item {
+    flex-basis: 100%;
+  }
+}
