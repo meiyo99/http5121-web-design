@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 9 accessibility examples</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <!-- Please replace number below with your own kit number afterwards. -->
+    <script src="https://kit.fontawesome.com/636f5a8f90.js" crossorigin="anonymous"></script>
+    <script async defer src="js/scripts.js"></script>
+  </head>
+  <body>
+    <!-- Skip to main content link: Useful for screen reader users and keyboard users. -->
+    <a id="skip-link" href="#main">Skip to main content</a>
+    <header id="header">
+      <h2 id="site-name">
+        <a href="#">HTTP5121</a>
+      </h2>
+      <nav id="main-nav" aria-label="Main navigation">
+        <ul class="inline-menu">
+          <li><a href="accessibility.html">Accessibility</a></li>
+          <!-- <li><a href="more-selectors.html">More selectors</a></li> -->
+        </ul>
+      </nav>
+    </header>
+    <main id="main">
+      <aside class="side-links">
+        <a id="skip-article" href="#main-article">Skip to main article</a>
+        <h2>Article contents</h2>
+        <ul class="vertical-menu">
+          <li><a href="#skip-links">Skip links</a></li>
+          <li><a href="#descriptive-text">Descriptive links and headings</a></li>
+          <li><a href="#alt-text">Alt text</a></li>
+          <li><a href="#img-caption">Image captions</a></li>
+          <li><a href="#icon-links">Image-only or icon-only links</a></li>
+          <li><a href="#colours">Designing with colours</a></li>
+          <li><a href="#menus">Menus</a></li>
+          <li><a href="#text-choices">Impact of text choices</a></li>
+          <li><a href="#forms">Forms with focus styling</a></li>
+          <li><a href="#buttons-links">Link "buttons"</a></li>
+          <li><a href="#resources">Useful resources</a></li>
+        </ul>
+      </aside>
+      <div id="main-article">
+        <h1>Accessibility examples</h1>
+        <!-- Skip to main content -->
+        <h2 id="skip-links">Skip links</h2>
+        <p>It is useful to have a link to skip to the main content of a page. This makes your page more <strong>keyboard and screen reader user friendly</strong>.</p>
+        <p>Put the following as the first thing in body (where "main" should be whatever the id of your main element is):</p>
+        <code>
+          &lt;a href="#main"&gt;Skip to main content&lt;/a&gt;
+        </code>
+        <p>You can then style your link to be hidden with absolute positioning and only show it when it's in focus (:focus pseudoclass).</p>
+
+        <!-- Descriptive links and headings -->
+        <h2 id="descriptive-text">Designing with descriptive links and headings</h2>
+        <p>Use descriptive text for links and headings.</p>
+        <p>Consider:</p>
+        <div><a href="#">Read more</a></div>
+        <div><a href="#">Read more about penguins</a></div>
+        <p>The second link is more descriptive and is more user-friendly for screen reader users. If you have no choice but to use the more generic "Read more" consider adding aria-label or a title attribute. For example:</p>
+        <code>
+          &lt;a href="#" title="Find out more about penguins"&gt;Read more&lt;/a&gt;
+        </code>
+        <p>The result:</p>
+        <a href="#" title="Find out more about penguins">Read more</a>
+        <p>Using the <strong>title</strong> attribute is useful in this case for both sighted mouse users and screen reader users.</p>
+
+        <!-- Alt text -->
+        <h2 id="alt-text">Alt text</h2>
+        <p>Alt text for images <strong>should be descriptive and provide context</strong>. An img without an alt attribute is invalid HTML.</p>
+        <p>Try with a screen reader:</p>
+        <div><img src="./img/dog.webp" width="150"></div>
+        <div><img src="./img/dog.webp" alt="Pug splooting" width="150"></div>
+        <p><strong>In 99% of cases, images should have alt text.</strong> This means that the alt attribute value should NOT be blank. The exception where you can omit alt text is if the image is not significant and might just be purely decorative. In that case, you would still have the alt attribute (but with an empty value) and also use aria-hidden="true" to tell screen readers to skip the image. For example:</p>
+        <code>
+          <pre>
+          &lt;div&gt;
+            &lt;img src="./img/checkmark.png" alt="" aria-hidden="true" width="50"&gt;
+            Correct
+          &lt;/div&gt;
+          </pre>
+        </code>
+        <p>This would result in:</p>
+        <div>
+          <img src="./img/checkmark.png" alt="" aria-hidden="true" width="50">
+          Correct
+        </div>
+        <p>NOTE: Free in-browser screen readers might still read elements even with aria-hidden="true".</p>
+        <p>Alternatively, if something is purely decorative, it might make more sense to insert using CSS.</p>
+        <div>
+          <a href="download.pdf">Download PDF</a>
+        </div>
+
+        <!-- Image captions -->
+        <h2 id="img-caption">Image captions</h2>
+        <p>You can add an image caption using figure, img, and figcaption.</p>
+        <code>
+          <pre>
+          &lt;figure&gt;
+            &lt;img src="./img/dog.webp" alt="Pug splooting"&gt;
+            &lt;figcaption&gt;A Pug puppy&lt;/figcaption&gt;
+          &lt;/figure&gt;
+          </pre>
+        </code>
+        <p>This would result in:</p>
+        <figure>
+          <img src="./img/dog.webp" alt="Pug splooting">
+          <figcaption>A Pug puppy</figcaption>
+        </figure>
+
+        <!-- Image-only or icon-only links -->
+        <h2 id="icon-links">Image-only or icon-only links</h2>
+        <p>For image- or icon-only links, there should be hidden text for screen reader users at the very least. You can add hidden text using the <strong>aria-label</strong> attribute.</p>
+        <code>
+          &lt;a href="#"&gt;&lt;i class="fa-solid fa-envelope" aria-label="Email"&gt;&lt;/i&gt;&lt;/a&gt;
+        </code>
+        <a href="#" aria-label="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+        <p>Alternatively, use the <strong>title</strong> attribute to also provide context to mouse users.</p>
+        
+        <!-- Designing with colour -->
+        <h2 id="colours">Designing with colour</h2>
+        <p>Make sure your text has good contrast against the background. Try using the WAVE accessibility browser extension to help identify colour contrast issues. Low contrast means that users with vision impairment will have more trouble reading your text (even if you think it's legible).</p>
+        <p>Also avoid using colour alone to convey meaning.</p>
+        <p>For example, avoid doing the following:</p>
+        <p>Veritas tools:</p>
+        <ul>
+          <li class="pro">work out of the box</li>
+          <li class="pro">needs little fettling</li>
+          <li class="con">a little pricy</li>
+        </ul>
+        <p>You <em>can</em> use colours but make sure that the meaning is clear even without the colours. For example:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Tool brand</th>
+              <th class="pro">Pros</th>
+              <th class="con">Cons</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Veritas</td>
+              <td>
+                <ul>
+                  <li>works out of the box</li>
+                  <li>needs little fettling</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>can be pricy</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Menu using button vs clickable div -->
+        <h2 id="menus">Menus</h2>
+        <p>When you have a clickable element which triggers something, use a button instead of a clickable div. A button's purpose is to trigger some action upon clicking and is natively interactive. A div has to be made interactive but is not fully accessible and interactive out of the box. Try interacting with both (below) using a keyboard. Tab to each and hit [Enter] to "click".</p>
+        <p>A button: <button class="button" onclick="clickMe()">Click me</button></p>
+        <p>A div: <div class="button" onclick="clickMe()">Click me</div></p>
+        <p>You cannot reach the div because div is not natively an interactive element (even if you add onclick). You <em>can</em> add an attribute to make it reachable by tabbing (add <strong>tabindex="0"</strong>) and therefore making the div register as interactive, but this is an extra step that is unnecessary if you just use button in the first place.</p>
+        <p>It is also useful to use aria-label to indicate what type of menu the nav is.</p>
+      
+        <!-- Impact of forcing text uppercase styling in HTML -->
+        <h2 id="text-choices">Impact of text choices</h2>
+        <p>Text choices can affect screen reader accessibility. Try: <span class="box">CONTACT US</span> vs <span class="box uppercase">contact us</span></p>
+
+        <!-- Form with focus styling -->
+        <h2 id="forms">Forms with focus styling</h2>
+        <p>In addition to general focus styling, you can also use the :focus-within pseudoclass to highlight forms with a field selected.</p>
+        <form>
+          <label for="name">Your name:</label>
+          <input type="text" id="name" name="name">
+          <button type="submit">Submit</button>
+        </form>
+        
+        <!-- Impact of nesting buttons/links inside each other -->
+        <h2 id="buttons-links">Link "buttons"</h2>
+        <p>Sometimes you want links to look like buttons. That is just a matter of CSS styling but you should still use the "a" element alone. In the case of an element which looks like a button but behaves like a link, just use a link and style with CSS to look like a button.</p>
+        <p><strong>Do not use a button or nest a button inside a link or vice versa</strong>. Nesting a link in a button or vice versa is not user-friendly for keyboard users or screen reader users.</p>
+        <p>Consider the following link nested in a button (try with a keyboard by tabbing):</p>
+        <button>
+          <a href="https://webaim.org/">Go to webaim.org</a>
+        </button>
+        <p>Tabbing once selects the button. A user would expect to be able to hit [Enter] and go to the link destination but nothing happens. This is because, on first tab, the user focuses on the button. It takes a second [Tab] to focus on the link. This is confusing (and it's invalid HTML too).</p>
+
+        <!-- More resources -->
+        <h2 id="resources">Useful resources</h2>
+        <p>Some useful links:</p>
+        <ul>
+          <li><a href="https://randoma11y.com/">High-contrast palette generator</a></li>
+          <li>
+            <a href="https://m2.material.io/design/usability/accessibility.html#understanding-accessibility">Material Design v2 accessibility guidelines</a>
+            <div>This is from Google's older version of Material Design but it has some good examples.</div>
+          </li>
+          <li>
+            <a href="https://www.w3.org/WAI/ARIA/apg/">ARIA authoring practices</a>
+            <div>Check out the design patterns for common interactive components. The design pattern examples even include expected keyboard shortcuts to implement.</div>
+          </li>
+      </div>
+      
+    </main>
+    <footer>
+      <p>&copy; Copyright HTTP5121, 2025.</p>
+    </footer>
+  </body>
+</html>

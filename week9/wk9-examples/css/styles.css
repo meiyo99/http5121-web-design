@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+/********************************************************************
+ * TABLE OF CONTENTS
+ * ==================================================================
+ * 1. GENERAL LAYOUT
+ * -- 1a. Layout containers
+ * -- 1b. Menus
+ * 2. ACCESSIBILITY
+ * -- 2a. Focus styling
+ * -- 2b. Skip links
+ * -- 2c. Img captions
+ * -- 2d. Colours
+ * -- 2e. Text
+ * -- 2f. Forms with focus styling
+ * 3. CSS SELECTORS
+ */
+
+/* 1. GENERAL LAYOUT */
+:root {
+  --text: #293241;
+  --light-text: #fff;
+  --secondary: #3d5a80;
+  --accent: #cc3f1e;
+  --accent-light: rgba(204, 63, 30, 0.2);
+  --light: #e0fbfc;
+  --light-alt: #e5e6e8;;
+}
+body {
+  margin:0;
+  font:300 1.2em "Urbanist",sans-serif;
+  background:var(--light-alt);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight:400;
+  color:var(--secondary);
+}
+h1 {
+  border-bottom:3px solid var(--accent);
+}
+h2 {
+  border-bottom:1px solid var(--accent);
+  margin-top:1.5em;
+}
+h3 {
+  border-left:2px solid var(--accent);
+}
+a:link, a:visited {
+  color:var(--accent);
+  font-weight:500;
+}
+a:hover {
+  text-decoration:none;
+}
+code {
+  display:block;
+  padding:1em;
+  background:var(--secondary);
+  color:var(--light);
+}
+strong {
+  font-weight:800;
+  color:var(--secondary);
+}
+.button {
+  font-family:inherit;
+  background:var(--accent);
+  color:var(--light-text);
+  font-weight:900;
+  display:inline-block;
+  text-align:center;
+  padding:0.5em 0.8em;
+  font-size:0.9em;
+  border:none;
+}
+/* -- 1a. Layout containers */
+#header {
+  background:var(--text);
+  padding:1em 2em;
+
+  display:flex; /* display as row (default for flex) */
+  justify-content:space-between; /* space out site name and nav */
+  align-items:center; /* vertically-center (for a row) */
+
+  font-size:1.2em;
+}
+/* #header :is(a:link, a:visited) */
+#header a:link,
+#header a:visited {
+  color:var(--light-text);
+  text-decoration:none;
+}
+#header a:hover {
+  color:var(--accent);
+}
+#site-name a:link {
+  color:var(--accent);
+  text-decoration:none;
+}
+#main {
+  display:flex;
+  flex-flow:row wrap;
+  padding:1em 2em;
+  gap:1em;
+}
+#main-article {
+  flex:3 0 0;
+}
+#side-links {
+  font-size:0.85em;
+}
+/* -- 1b. Menus */
+.inline-menu {
+  padding:0;
+  display:flex; /* or use display:inline-block if you want */
+  gap:4em;
+  list-style:none;
+}
+.vertical-menu {
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  list-style:none;
+}
+.vertical-menu li {
+  border-left:3px solid var(--secondary);
+}
+.vertical-menu a:link,
+.vertical-menu a:visited {
+  display:block; 
+  padding:0.5em 0.8em;
+  font-style:italic;
+  text-decoration:none;
+}
+.vertical-menu a:hover {
+  background:var(--accent-light);
+}
+
+/* 2. ACCESSIBILITY */
+img {
+  display:block; 
+  max-width:100%;
+  height:auto;
+}
+/* -- 2a. Focus styling */
+:focus {
+  /* general focus styling */
+  outline:2px solid var(--accent); /* outline doesn't affect width like border would */
+}
+/* -- 2b. Skip links */
+#skip-link,
+#skip-article {
+  position:absolute;
+  left:-10000px; /* by default, hide it */
+}
+#skip-link:focus,
+#skip-article:focus {
+  /* when in focus, bring into view */
+  position:relative; /* to shift other content down */
+  left:0;
+  /* other styling */
+  display:block;
+  padding:0.8em;
+  background:var(--accent);
+  color:var(--light-text);
+  font-weight:700;
+  text-align:center;
+}
+/* -- 2c. Img captions */
+figure {
+  max-width:250px;
+}
+figcaption {
+  background:var(--text);
+  font-style:italic;
+  color:var(--light-text);
+  padding:0.5em;
+  font-size:0.75em;
+}
+/* -- 2d. Colours */
+.pro {
+  color:green;
+}
+.con {
+  color:red;
+}
+/* -- 2e. Text */
+.box {
+  padding:0.5em 0.8em;
+  border:2px solid var(--secondary);
+}
+.uppercase {
+  text-transform:uppercase;
+}
+/* -- 2f. Forms with focus styling */
+form {
+  max-width:600px;
+  background:var(--accent-light);
+  padding:1em;
+  border-radius:20px;
+}
+form:focus-within {
+  background:var(--light);
+}
+/* 3. CSS SELECTORS */
+a[href$=".pdf"]::before {
+  font:var(--fa-font-solid);
+  -webkit-font-smoothing:antialiased;
+  content:"\f1c1";
+  text-decoration:none;
+  margin-right:8px;
+}
