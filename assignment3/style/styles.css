@@ -1,11 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 :root {
     --clr-primary:#333333;
     --clr-secondary:#6E6E6E;
     --clr-accent:#FA7D00;
+    --clr-background:#FFE9CA;
 
     --ff-heading: "Gentium Book Plus", sans-serif;
     --ff-body: "Gentium Plus", sans-serif;
 }
+
+/* --------------------------------------------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset */
 
 /* Box sizing rules */
 *,
@@ -72,11 +79,247 @@ svg {
   }
 }
 
-
-
-/* @import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/* --------------------------------------------------- */
 
 body {
-    background-color: #FFE9CA;
+    /* background-color: #FFE9CA; */
+    background-color: var(--clr-background);
     font:300 1.125em "Gentium Plus", sans-serif;
-} */
+    margin: 40px 213px 40px 213px;
+}
+
+/* ---------------------- SECTION HEADERS ---------------------- */
+
+.section-header {
+  color: #000;
+  font-family: "Gentium Book Plus";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/* ---------------------- HORIZONTAL LINE ---------------------- */
+
+.horizontal-line {
+  border-top: 1px dashed var(--clr-primary);
+  border-bottom: 1px dashed var(--clr-primary);
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+/* ---------------------- TOP-NAVIGATION ---------------------- */
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  color: var(--clr-primary);
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.top-nav-buttons {
+  display: flex;
+  list-style: none;
+}
+
+.top-nav-buttons li:not(:last-child) {
+  margin-right: 2.5em; 
+}
+
+.top-nav-buttons li a {
+  text-decoration: none;
+  color: var(--clr-primary);
+}
+
+.top-nav-buttons li a:hover {
+  text-decoration: underline;
+}
+
+/* ---------------------- HERO-SECTION ---------------------- */
+
+.hero {
+  display: flex;
+}
+
+.hero img {
+  width: 180px;
+  height: 267px;
+  flex-shrink: 0;
+  margin: 188px 0px 151px 136px;
+}
+
+.hero-text {
+  margin: 224px 170px 172px 50px;
+}
+
+.hero-text h1 {
+  font-family: "Gentium Book Plus";
+  color: var(--clr-primary);
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 44px;
+}
+
+.hero-text p {
+  color: var(--clr-secondary);
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 34px;
+  margin-top: 30px;
+}
+
+.hero-text p .hero-accent {
+  color: #FA7D00;
+  font-weight: 700;
+}
+
+.hero-text p .hero-und {
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-underline-position: from-font;
+}
+
+.hero-text p .hero-em {
+  color: #6E6E6E;
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 34px;
+}
+
+.hero-socials {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 200px;
+}
+
+.hero-socials li a {
+  display: flex;
+  color: var(--clr-primary);
+  text-underline-position: from-font;font-size: 24px;
+  font-weight: 400;
+}
+
+/* ---------------------- WORK ---------------------- */
+
+.work .work-tile {
+  display: flex;
+  margin-top: 40px;
+}
+
+.work .work-tile .work-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.work .work-tile .work-text h3 {
+  color: var(--clr-primary);
+  font-family: "Gentium Book Plus";
+  padding: 20px 0px 0px 20px;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 34px;
+}
+
+.work .work-tile .work-text p {
+  display: flex;
+  padding: 0px 0px 10px 20px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.work .work-tile .work-text .company {
+  color: var(--clr-primary);
+  font-family: "Gentium Book Plus";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.work .work-tile .work-text .location {
+  color: var(--clr-secondary);
+  font-family: "Gentium Book Plus";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+/* ---------------------- ABOUT ME ---------------------- */
+
+.about .about-tile {
+  display: flex;
+  margin-top: 40px;
+}
+
+.about .about-tile .about-text {
+  align-content: center;
+  padding-left: 20px;
+  color: var(--clr-primary);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.about .about-tile .about-accent {
+  color: #FA7D00;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/* ---------------------- SKILLS ---------------------- */
+
+.skills-cert {
+  display: flex;
+  /* justify-content: center; */
+}
+
+.skills-cert h3 {
+  color: #3D3D3D;
+  font-family: "Gentium Book Plus";
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.skills-cert ul li {
+  color: #6E6E6E;
+  font-family: "Gentium Book Plus";
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.skills li, .tools li, .certifications li, .certifications li a {
+  color: var(--clr-secondary);
+  list-style: none;
+  text-decoration: none;
+}
+
+.skills-cert .skills {
+  display: flex;
+  width: 320px;
+  min-height: 1px;
+  padding: 20px 10px 0px 10px;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.skills-cert .tools {
+  display: flex;
+  width: 270px;
+  min-height: 1px;
+  padding: 20px 10px 0px 10px;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.skills-cert .certifications {
+  display: flex;
+  width: 298px;
+  min-height: 1px;
+  padding: 20px 10px 0px 10px;
+  flex-direction: column;
+  gap: 20px;
+}
