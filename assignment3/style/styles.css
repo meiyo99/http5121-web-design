@@ -79,7 +79,7 @@ svg {
   }
 }
 
-/* --------------------------------------------------- */
+/* ---------------------- BODY ---------------------- */
 
 body {
     /* background-color: #FFE9CA; */
@@ -117,6 +117,10 @@ body {
   font-size: 20px;
 }
 
+.top-nav .logo:hover {
+  color: var(--clr-accent);
+}
+
 .top-nav-buttons {
   display: flex;
   list-style: none;
@@ -132,7 +136,7 @@ body {
 }
 
 .top-nav-buttons li a:hover {
-  text-decoration: underline;
+  color: var(--clr-accent);
 }
 
 /* ---------------------- HERO-SECTION ---------------------- */
@@ -187,6 +191,8 @@ body {
   line-height: 34px;
 }
 
+/* ---------------------- HERO SOCIALS ---------------------- */
+
 .hero-socials {
   display: flex;
   list-style: none;
@@ -196,9 +202,15 @@ body {
 
 .hero-socials li a {
   display: flex;
+  gap: 5px;
   color: var(--clr-primary);
-  text-underline-position: from-font;font-size: 24px;
+  text-underline-position: from-font;
+  font-size: 24px;
   font-weight: 400;
+}
+
+.hero-socials li a:hover, img:hover {
+  color: var(--clr-accent);
 }
 
 /* ---------------------- WORK ---------------------- */
@@ -309,6 +321,7 @@ body {
 
 .footer {
   display: flex;
+  justify-content: space-between;
 }
 
 .footer .footer-text {
@@ -345,10 +358,10 @@ body {
 }
 
 .footer-form #name, #email ,#message {
-  width: 351px;
+  font-size: 16px;
   height: 34px;
   padding-left: 8px;
-  flex-shrink: 0;
+  color: var(--clr-primary);
   background: rgba(30, 30, 30, 0.08);
   border: none;
 }
@@ -356,24 +369,31 @@ body {
 .footer-form #message {
   width: 351px;
   height: 85px;
+  padding-bottom: 50px;
   flex-shrink: 0;
 }
 
 .footer-form #submit {
-  display: flex;
   width: 102px;
   height: 49px;
   padding: 10px 30px;
   border: none;
   justify-content: center;
-  align-items: center;
-  gap: 10px;
   border-radius: 10px;
   background: #FA7D00;
   color: #FFF;
-font-family: "Gentium Book Plus";
-font-size: 20px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+  font-size: 20px;
+}
+
+/* ---------------------- FOOTER NAV ---------------------- */
+
+.footer-nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+  margin-top: 80px;
+}
+
+.footer-nav li a {
+  color: var(--clr-primary);
 }
