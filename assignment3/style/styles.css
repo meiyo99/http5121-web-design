@@ -273,7 +273,7 @@ body {
 
 .skills-cert {
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
 }
 
 .skills-cert h3 {
@@ -284,42 +284,96 @@ body {
   line-height: 30px;
 }
 
-.skills-cert ul li {
-  color: #6E6E6E;
-  font-family: "Gentium Book Plus";
-  font-size: 20px;
-  font-weight: 400;
+.skills-list li:hover, .skills-list li a:hover {
+  color: var(--clr-accent);
 }
 
-.skills li, .tools li, .certifications li, .certifications li a {
+.skills-list li, .skills-list li a {
   color: var(--clr-secondary);
+  font-size: 20px;
   list-style: none;
-  text-decoration: none;
+  text-underline-position: from-font;
+  /* text-decoration: none; */
 }
 
-.skills-cert .skills {
+.skills-cert .skills-list {
   display: flex;
   width: 320px;
   min-height: 1px;
-  padding: 20px 10px 0px 10px;
+  padding: 40px 10px 0px 10px;
   flex-direction: column;
   gap: 20px;
 }
 
-.skills-cert .tools {
+/* ---------------------- FOOTER ---------------------- */
+
+.footer {
   display: flex;
-  width: 270px;
-  min-height: 1px;
-  padding: 20px 10px 0px 10px;
-  flex-direction: column;
-  gap: 20px;
 }
 
-.skills-cert .certifications {
-  display: flex;
-  width: 298px;
-  min-height: 1px;
-  padding: 20px 10px 0px 10px;
+.footer .footer-text {
+  align-content: center;
+  max-width: 600px;
+}
+
+.footer-text .footer-header {
+  color: var(--clr-accent);
+  font-family: "Gentium Book Plus";
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 36px;
+}
+
+.footer-text p {
+  /* display: flex;
+  width: 490px;
+  height: 72px;
   flex-direction: column;
-  gap: 20px;
+  justify-content: center; */
+  color: #6E6E6E;
+  font-family: "Gentium Book Plus";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.footer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-form #name, #email ,#message {
+  width: 351px;
+  height: 34px;
+  padding-left: 8px;
+  flex-shrink: 0;
+  background: rgba(30, 30, 30, 0.08);
+  border: none;
+}
+
+.footer-form #message {
+  width: 351px;
+  height: 85px;
+  flex-shrink: 0;
+}
+
+.footer-form #submit {
+  display: flex;
+  width: 102px;
+  height: 49px;
+  padding: 10px 30px;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  background: #FA7D00;
+  color: #FFF;
+font-family: "Gentium Book Plus";
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
 }
