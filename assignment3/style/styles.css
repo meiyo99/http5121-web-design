@@ -85,7 +85,9 @@ body {
     /* background-color: #FFE9CA; */
     background-color: var(--clr-background);
     font:300 1.125em "Gentium Plus", sans-serif;
-    margin: 40px 213px 40px 213px;
+    padding: 40px 0px 40px 0px;
+    max-width: 950px;
+    margin: auto;
 }
 
 /* ---------------------- SECTION HEADERS ---------------------- */
@@ -143,17 +145,21 @@ body {
 
 .hero {
   display: flex;
+  gap: 50px;
+  margin-top: 190px;
+  margin-bottom: 150px;
 }
 
 .hero img {
   width: 180px;
   height: 267px;
   flex-shrink: 0;
-  margin: 188px 0px 151px 136px;
+  /* margin: 188px 0px 151px 136px; */
 }
 
 .hero-text {
-  margin: 224px 170px 172px 50px;
+  align-content: center;
+  /* margin: 224px 170px 172px 50px; */
 }
 
 .hero-text h1 {
@@ -209,6 +215,11 @@ body {
   font-weight: 400;
 }
 
+.hero-socials li img {
+  width: 30px;
+  height: auto;
+}
+
 .hero-socials li a:hover, img:hover {
   color: var(--clr-accent);
 }
@@ -218,6 +229,11 @@ body {
 .work .work-tile {
   display: flex;
   margin-top: 40px;
+}
+
+.work .work-tile img {
+  max-width: 100%;
+  object-fit: contain;
 }
 
 .work .work-tile .work-text {
@@ -263,6 +279,10 @@ body {
 .about .about-tile {
   display: flex;
   margin-top: 40px;
+}
+
+.about .about-tile img {
+  object-fit: contain;
 }
 
 .about .about-tile .about-text {
@@ -380,9 +400,13 @@ body {
   border: none;
   justify-content: center;
   border-radius: 10px;
-  background: #FA7D00;
+  background-color: #FA7D00;
   color: #FFF;
   font-size: 20px;
+}
+
+.footer-form #submit:hover {
+  background-color: #DD6F00;
 }
 
 /* ---------------------- FOOTER NAV ---------------------- */
@@ -392,8 +416,325 @@ body {
   list-style: none;
   justify-content: space-evenly;
   margin-top: 80px;
+  padding-bottom: 40px;
 }
 
 .footer-nav li a {
   color: var(--clr-primary);
+}
+
+/* ------------------------------------- TABLET SCREEN  ------------------------------------- */
+
+@media screen and (max-width: 768px) {
+  
+  /* ---------------------- BODY ---------------------- */
+
+body {
+  background-color: var(--clr-background);
+  font:300 1.125em "Gentium Plus", sans-serif;
+  padding: 40px 0px 40px 0px;
+  max-width: 728px;
+  margin: auto;
+}
+
+/* ---------------------- SECTION HEADERS ---------------------- */
+
+.section-header {
+  color: #000;
+  font-family: "Gentium Book Plus";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/* ---------------------- HORIZONTAL LINE ---------------------- */
+
+.horizontal-line {
+  border-top: 1px dashed var(--clr-primary);
+  border-bottom: 1px dashed var(--clr-primary);
+  margin-top: 70px;
+  margin-bottom: 30px;
+}
+
+/* ---------------------- HERO-SECTION ---------------------- */
+
+.hero {
+  display: flex;
+  gap: 40px;
+  margin-top: 225px;
+  margin-bottom: 167px;
+}
+
+.hero img {
+  width: auto;
+  height: 181px;
+}
+
+.hero-text {
+  align-content: center;
+  /* margin: 224px 170px 172px 50px; */
+}
+
+.hero-text h1 {
+  color: #333;
+  font-family: "Gentium Book Plus";
+  font-size: 42px;
+}
+
+.hero-text p {
+  color: var(--clr-secondary);
+  font-family: "Gentium Plus";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 34px; /* 121.429% */
+}
+
+.hero-text p .hero-accent {
+  color: #FA7D00;
+  font-weight: 700;
+}
+
+.hero-text p .hero-und {
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-underline-position: from-font;
+}
+
+.hero-text p .hero-em {
+  color: #6E6E6E;
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 34px;
+}
+
+/* ---------------------- HERO SOCIALS ---------------------- */
+
+.hero-socials {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 70px;
+}
+
+.hero-socials li a {
+  display: flex;
+  gap: 5px;
+  color: var(--clr-primary);
+  text-underline-position: from-font;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.hero-socials li img {
+  width: 26px;
+  height: auto;
+}
+
+.hero-socials li a:hover, img:hover {
+  color: var(--clr-accent);
+}
+
+}
+
+/* ---------------------- WORK ---------------------- */
+
+.work .work-tile {
+  display: flex;
+  margin-top: 30px;
+}
+
+.work .work-tile img {
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.work .work-tile .work-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.work .work-tile .work-text h3 {
+  color: var(--clr-primary);
+  font-family: "Gentium Book Plus";
+  padding: 20px 0px 0px 20px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.work .work-tile .work-text p {
+  display: flex;
+  padding: 0px 0px 10px 20px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.work .work-tile .work-text .company {
+  color: var(--clr-primary);
+  font-family: "Gentium Book Plus";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+.work .work-tile .work-text .location {
+  color: var(--clr-secondary);
+  font-family: "Gentium Book Plus";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+/* ---------------------- ABOUT ME ---------------------- */
+
+.about .about-tile {
+  display: flex;
+  margin-top: 50px;
+}
+
+.about .about-tile img {
+  object-fit: contain;
+}
+
+.about .about-tile .about-text {
+  align-content: center;
+  padding-left: 20px;
+  color: var(--clr-primary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.about .about-tile .about-accent {
+  color: #FA7D00;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/* ---------------------- SKILLS ---------------------- */
+
+.skills-cert {
+  display: flex;
+  justify-content: center;
+}
+
+.skills-cert h3 {
+  color: #3D3D3D;
+  font-family: "Gentium Book Plus";
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.skills-list li:hover, .skills-list li a:hover {
+  color: var(--clr-accent);
+}
+
+.skills-list li, .skills-list li a {
+  color: var(--clr-secondary);
+  font-size: 20px;
+  list-style: none;
+  text-underline-position: from-font;
+  /* text-decoration: none; */
+}
+
+.skills-cert .skills-list {
+  display: flex;
+  width: 320px;
+  min-height: 1px;
+  padding: 50px 10px 0px 10px;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ---------------------- FOOTER ---------------------- */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer .footer-text {
+  align-content: center;
+  max-width: 300px;
+  padding-left: 34px;
+}
+
+.footer-text .footer-header {
+  color: var(--clr-accent);
+  font-family: "Gentium Book Plus";
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 36px;
+}
+
+.footer-text p {
+  color: #6E6E6E;
+  font-family: "Gentium Book Plus";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.footer-form {
+  display: flex;
+  padding-right: 34px;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-form #name, #email ,#message {
+  font-size: 16px;
+  height: 34px;
+  padding-left: 8px;
+  color: var(--clr-primary);
+  background: rgba(30, 30, 30, 0.08);
+  border: none;
+}
+
+.footer-form #message {
+  width: 351px;
+  height: 85px;
+  padding-bottom: 50px;
+  flex-shrink: 0;
+}
+
+.footer-form #submit {
+  width: 102px;
+  height: 49px;
+  padding: 10px 30px;
+  border: none;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: #FA7D00;
+  color: #FFF;
+  font-size: 20px;
+}
+
+.footer-form #submit:hover {
+  background-color: #DD6F00;
+}
+
+/* ---------------------- FOOTER NAV ---------------------- */
+
+.footer-nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+  margin-top: 60px;
+}
+
+.footer-nav li a {
+  color: var(--clr-primary);
+}
+
+/* ------------------------------------- MOBILE SCREEN  ------------------------------------- */
+
+@media screen and (max-width: 320px) {
+  
 }
