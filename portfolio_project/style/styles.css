@@ -82,7 +82,6 @@ svg {
 /* ---------------------- BODY ---------------------- */
 
 body {
-    /* background-color: #FFE9CA; */
     background-color: var(--clr-background);
     font:300 1.125em "Gentium Plus", sans-serif;
     padding: 40px 0px 40px 0px;
@@ -119,7 +118,11 @@ body {
   font-size: 20px;
 }
 
-.top-nav .logo:hover {
+.top-nav .mobile-logo {
+  display: none;
+}
+
+.top-nav .desktop-logo:hover {
   color: var(--clr-accent);
 }
 
@@ -198,6 +201,10 @@ body {
 }
 
 /* ---------------------- HERO SOCIALS ---------------------- */
+
+.mobile-hero-socials {
+  display: none;
+}
 
 .hero-socials {
   display: flex;
@@ -430,36 +437,25 @@ body {
   /* ---------------------- BODY ---------------------- */
 
 body {
-  background-color: var(--clr-background);
-  font:300 1.125em "Gentium Plus", sans-serif;
-  padding: 40px 0px 40px 0px;
   max-width: 728px;
-  margin: auto;
-}
-
-/* ---------------------- SECTION HEADERS ---------------------- */
-
-.section-header {
-  color: #000;
-  font-family: "Gentium Book Plus";
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 24px;
 }
 
 /* ---------------------- HORIZONTAL LINE ---------------------- */
 
 .horizontal-line {
-  border-top: 1px dashed var(--clr-primary);
-  border-bottom: 1px dashed var(--clr-primary);
   margin-top: 70px;
   margin-bottom: 30px;
+}
+
+/* ---------------------- TOP NAV---------------------- */
+
+.top-nav .mobile-logo {
+  display: none;
 }
 
 /* ---------------------- HERO-SECTION ---------------------- */
 
 .hero {
-  display: flex;
   gap: 40px;
   margin-top: 225px;
   margin-bottom: 167px;
@@ -468,17 +464,6 @@ body {
 .hero img {
   width: auto;
   height: 181px;
-}
-
-.hero-text {
-  align-content: center;
-  /* margin: 224px 170px 172px 50px; */
-}
-
-.hero-text h1 {
-  color: #333;
-  font-family: "Gentium Book Plus";
-  font-size: 42px;
 }
 
 .hero-text p {
@@ -490,211 +475,95 @@ body {
   line-height: 34px; /* 121.429% */
 }
 
-.hero-text p .hero-accent {
-  color: #FA7D00;
-  font-weight: 700;
-}
-
-.hero-text p .hero-und {
-  text-decoration-line: underline;
-  text-decoration-style: solid;
-  text-underline-position: from-font;
-}
-
-.hero-text p .hero-em {
-  color: #6E6E6E;
-  font-size: 28px;
-  font-style: italic;
-  font-weight: 400;
-  line-height: 34px;
-}
-
 /* ---------------------- HERO SOCIALS ---------------------- */
 
 .hero-socials {
-  display: flex;
-  list-style: none;
-  justify-content: center;
   gap: 70px;
 }
 
 .hero-socials li a {
-  display: flex;
-  gap: 5px;
-  color: var(--clr-primary);
-  text-underline-position: from-font;
   font-size: 18px;
-  font-weight: 400;
 }
 
 .hero-socials li img {
   width: 26px;
-  height: auto;
-}
-
-.hero-socials li a:hover, img:hover {
-  color: var(--clr-accent);
-}
-
 }
 
 /* ---------------------- WORK ---------------------- */
 
 .work .work-tile {
-  display: flex;
   margin-top: 30px;
 }
 
-.work .work-tile img {
-  max-width: 100%;
-  object-fit: contain;
-}
-
-.work .work-tile .work-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 .work .work-tile .work-text h3 {
-  color: var(--clr-primary);
-  font-family: "Gentium Book Plus";
-  padding: 20px 0px 0px 20px;
   font-size: 24px;
-  font-weight: 400;
   line-height: 26px;
 }
 
-.work .work-tile .work-text p {
-  display: flex;
-  padding: 0px 0px 10px 20px;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
 .work .work-tile .work-text .company {
-  color: var(--clr-primary);
-  font-family: "Gentium Book Plus";
   font-size: 18px;
-  font-weight: 400;
   line-height: 21px;
 }
 
 .work .work-tile .work-text .location {
-  color: var(--clr-secondary);
-  font-family: "Gentium Book Plus";
   font-size: 18px;
-  font-weight: 400;
   line-height: 21px;
 }
 
 /* ---------------------- ABOUT ME ---------------------- */
 
 .about .about-tile {
-  display: flex;
   margin-top: 50px;
 }
 
-.about .about-tile img {
-  object-fit: contain;
-}
-
 .about .about-tile .about-text {
-  align-content: center;
-  padding-left: 20px;
-  color: var(--clr-primary);
   font-size: 16px;
-  font-weight: 400;
   line-height: 24px;
 }
 
 .about .about-tile .about-accent {
-  color: #FA7D00;
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 16px;
   line-height: 24px;
 }
 
 /* ---------------------- SKILLS ---------------------- */
 
-.skills-cert {
-  display: flex;
-  justify-content: center;
-}
-
 .skills-cert h3 {
-  color: #3D3D3D;
-  font-family: "Gentium Book Plus";
-  font-size: 28px;
-  font-weight: 700;
+  font-size: 24px;
   line-height: 30px;
 }
 
-.skills-list li:hover, .skills-list li a:hover {
-  color: var(--clr-accent);
-}
-
 .skills-list li, .skills-list li a {
-  color: var(--clr-secondary);
-  font-size: 20px;
-  list-style: none;
-  text-underline-position: from-font;
-  /* text-decoration: none; */
+  font-size: 18px;
 }
 
 .skills-cert .skills-list {
-  display: flex;
-  width: 320px;
-  min-height: 1px;
   padding: 50px 10px 0px 10px;
-  flex-direction: column;
-  gap: 20px;
 }
 
 /* ---------------------- FOOTER ---------------------- */
 
-.footer {
-  display: flex;
-  justify-content: space-between;
-}
-
 .footer .footer-text {
-  align-content: center;
   max-width: 300px;
   padding-left: 34px;
 }
 
 .footer-text .footer-header {
-  color: var(--clr-accent);
-  font-family: "Gentium Book Plus";
   font-size: 28px;
-  font-weight: 700;
-  line-height: 36px;
 }
 
 .footer-text p {
-  color: #6E6E6E;
-  font-family: "Gentium Book Plus";
   font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
   line-height: 20px;
 }
 
 .footer-form {
   display: flex;
   padding-right: 34px;
-  flex-direction: column;
-  gap: 10px;
 }
 
 .footer-form #name, #email ,#message {
   font-size: 16px;
-  height: 34px;
-  padding-left: 8px;
-  color: var(--clr-primary);
-  background: rgba(30, 30, 30, 0.08);
-  border: none;
 }
 
 .footer-form #message {
@@ -704,37 +573,238 @@ body {
   flex-shrink: 0;
 }
 
-.footer-form #submit {
-  width: 102px;
-  height: 49px;
-  padding: 10px 30px;
-  border: none;
-  justify-content: center;
-  border-radius: 10px;
-  background-color: #FA7D00;
-  color: #FFF;
-  font-size: 20px;
-}
-
-.footer-form #submit:hover {
-  background-color: #DD6F00;
-}
-
 /* ---------------------- FOOTER NAV ---------------------- */
 
 .footer-nav ul {
-  display: flex;
-  list-style: none;
-  justify-content: space-evenly;
   margin-top: 60px;
 }
 
-.footer-nav li a {
-  color: var(--clr-primary);
 }
 
 /* ------------------------------------- MOBILE SCREEN  ------------------------------------- */
 
 @media screen and (max-width: 320px) {
   
+  /* ---------------------- BODY ---------------------- */
+
+body {
+  max-width: 320px;
+}
+
+/* ---------------------- SECTION HEADERS ---------------------- */
+
+.section-header {
+  max-width: 50%;
+  margin: auto;
+}
+
+/* ---------------------- HORIZONTAL LINE ---------------------- */
+
+.horizontal-line {
+  flex-direction: column;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* ---------------------- TOP NAV---------------------- */
+
+.top-nav .mobile-logo {
+  display: block;
+}
+
+.top-nav .mobile-logo:hover {
+  color: var(--clr-accent);
+}
+
+.top-nav .desktop-logo {
+  display: none;
+}
+
+.top-nav {
+  justify-content: space-around;
+}
+
+.top-nav-buttons li:not(:last-child) {
+  margin-right: 15px;
+}
+
+/* ---------------------- HERO-SECTION ---------------------- */
+
+.hero {
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.hero img {
+  width: 160px;
+  height: 237px;
+}
+
+.hero-text {
+  width: 266px;
+}
+
+.hero-text h1 {
+  font-size: 32px;
+  line-height: 44px;
+}
+
+.hero-text p {
+  font-size: 21px;
+  line-height: 25px;
+  margin-top: 10px;
+}
+
+.hero-text .hero-accent, .hero-text .hero-em, .hero-text .hero-und {
+  font-size: 21px !important; 
+  line-height: 25px !important;
+}
+
+/* ---------------------- HERO SOCIALS ---------------------- */
+
+.hero-socials {
+  display: none;
+}
+
+.mobile-hero-socials {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  list-style: none;
+}
+
+.mobile-hero-socials li img {
+  width: 35px;
+  margin: 5px;
+}
+
+/* ---------------------- WORK ---------------------- */
+
+.work .work-tile {
+  display: block;
+  margin-top: 30px;
+}
+
+.work .work-tile .work-text h3 {
+  font-size: 20px;
+  padding: 20px;
+  line-height: 24px;
+}
+
+.work .work-tile .work-text .company {
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.work .work-tile .work-text .location {
+  font-size: 15px;
+  line-height: 18px;
+  padding-bottom: 10px;
+}
+
+/* ---------------------- ABOUT ME ---------------------- */
+
+.about .about-tile {
+  display: block;
+  margin-top: 30px;
+}
+
+.about .about-tile img {
+  height: 421px;
+  margin: auto;
+}
+
+.about .about-tile .about-text {
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 20px;
+}
+
+.about .about-tile .about-accent {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* ---------------------- SKILLS ---------------------- */
+
+.skills-cert {
+  display: block;
+  margin: auto;
+}
+
+.skills-cert h3 {
+  font-size: 20px;
+  line-height: 10px;
+}
+
+.skills-list li, .skills-list li a {
+  font-size: 15px;
+}
+
+.skills-cert .skills-list {
+  padding: 30px 55px 0px 55px;
+}
+
+/* ---------------------- FOOTER ---------------------- */
+
+.footer {
+  display: block;
+}
+
+.footer .footer-text {
+  max-width: 280px;
+  padding-left: 34px;
+}
+
+.footer-text .footer-header {
+  font-size: 28px;
+}
+
+.footer-text p {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.footer-form {
+  /* display: flex;
+  margin: auto; */
+  /* padding-right: 34px; */
+  display: flex;
+  width: 280px;
+  margin: auto;
+  padding: 24px 0px 50px 0px;
+  gap: 8px;
+}
+
+.footer-form #name, #email ,#message {
+  font-size: 16px;
+  width: 280px;
+  height: 28px;
+}
+
+.footer-form #message {
+  width: 280px;
+  height: 67px;
+  padding-bottom: 50px;
+  flex-shrink: 0;
+}
+
+.footer-form #submit {
+  width: 45px;
+  height: 21.618px;
+  font-size: 8px;
+  padding: 4.412px 13.235px;
+}
+
+/* ---------------------- FOOTER NAV ---------------------- */
+
+.footer-nav ul {
+  margin-top: 0px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
 }
